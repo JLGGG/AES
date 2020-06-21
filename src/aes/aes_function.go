@@ -355,14 +355,14 @@ func EncryptAES(paramPlain []byte, paramCipher []byte, paramKey []byte) {
 		//numberOfRound is a number of AES round.
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
 		//Using 192bit key size and 12 round.
-	} /*else if keySize == 6 {
+	} else if keySize == 6 {
 		numberOfRound = 12
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
 		//Using 256bit key size and 14 round.
 	} else if keySize == 8 {
 		numberOfRound = 14
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
-	}*/
+	}
 	//Convert text to state(data units used in AES).
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 4; j++ {
@@ -411,13 +411,13 @@ func DecryptAES(paramCipher []byte, paramComplete []byte, paramKey []byte) {
 		//blockSize is a AES block size.(word units)
 		//numberOfRound is a number of AES round.
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
-	} /*else if keySize == 6 {
+	} else if keySize == 6 {
 		numberOfRound = 12
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
 	} else if keySize == 8 {
 		numberOfRound = 14
 		W = make([]DWORD, 32*blockSize*(numberOfRound+1))
-	}*/
+	}
 	//Convert cipher-text to state(data units used in AES).
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 4; j++ {
